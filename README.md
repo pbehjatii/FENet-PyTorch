@@ -1,5 +1,6 @@
 # FENet-PyTorch
-### **This is repository is an official PyTorch implementation of the paper "Frequency-based Enhancement Network for Efficient Super-Resolution".** IEEE Access, 2022. [[Paper](https://ieeexplore.ieee.org/document/9778017)] 
+### **This is repository is an official PyTorch implementation of the paper "Frequency-based Enhancement Network for Efficient Super-Resolution".** 
+IEEE Access, 2022. [[Paper](https://ieeexplore.ieee.org/document/9778017)] 
 
 
 
