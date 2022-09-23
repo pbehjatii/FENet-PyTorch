@@ -110,7 +110,7 @@ This implementation is for non-commercial research use only. If you find this co
 
 - Single image super-resolution based on directional variance attention network - Pattern Recognition, 2022. [[Paper](https://www.sciencedirect.com/science/article/pii/S0031320322004770?dgcid=author)] [[Code](https://github.com/pbehjatii/DiVANet)] 
 
-- OverNet: Lightweight Multi-Scale Super-Resolution with Overscaling Network - WACV 2022- [[Paper](https://openaccess.thecvf.com/content/WACV2021/papers/Behjati_OverNet_Lightweight_Multi-Scale_Super-Resolution_With_Overscaling_Network_WACV_2021_paper.pdf)] 
+- OverNet: Lightweight Multi-Scale Super-Resolution with Overscaling Network - WACV, 2022- [[Paper](https://openaccess.thecvf.com/content/WACV2021/papers/Behjati_OverNet_Lightweight_Multi-Scale_Super-Resolution_With_Overscaling_Network_WACV_2021_paper.pdf)] 
 [[Code](https://github.com/pbehjatii/OverNet-PyTorch)] 
 
 - Hierarchical Residual Attention Network for Single Image Super-Resolution [[arXiv](https://arxiv.org/abs/2012.04578)]
