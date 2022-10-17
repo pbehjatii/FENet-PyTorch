@@ -73,7 +73,7 @@ $ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 
  ```
 
 ### Results
-We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring. All visual results (BD and DN) of FENet for scale factor x3 can be downloaded [here](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing).
+We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring. All visual results (BI, BD, and DN) of FENet can be downloaded [here](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing).
 <details>
 <summary>Lightweight Single Image Super-Resolution (click me)</summary>
 <p align="center">
