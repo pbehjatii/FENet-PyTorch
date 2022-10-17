@@ -51,7 +51,7 @@ $ python div2h5.py
 
 
 ### Testing
-We provide the pretrained models in `checkpoint` directory. All visual results of FENet for scale factor x2, x3, and x4 can be downloaded [here](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing). To test FENet on benchmark datasets:
+We provide the pretrained models in `checkpoint` directory. All visual results of FENet for scale factor x2, x3, and x4 (BI) can be downloaded [here](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing). To test FENet on benchmark datasets:
 ```shell
 # Scale factor x2
 $ python sample.py      --test_data_dir dataset/<dataset> --scale 2 --ckpt_path ./checkpoint/<path>.pth --sample_dir <sample_dir>
@@ -77,7 +77,7 @@ $ python train.py --patch_size 64 --batch_size 64 --max_steps 600000 --lr 0.001 
  ```
 
 ### Results
-We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring.
+We achieved state-of-the-art performance on lightweigh image SR, denoising and deblurring. All visual results (BD and DN) of FENet for scale factor x3 can be downloaded [here](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing).
 <details>
 <summary>Lightweight Single Image Super-Resolution (click me)</summary>
 <p align="center">
