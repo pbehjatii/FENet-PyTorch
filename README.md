@@ -3,10 +3,6 @@
 IEEE Access, 2022. [[Paper](https://ieeexplore.ieee.org/document/9778017)] 
 
 
-
- ### FAQs
-1. We will provide the pretrained models (DIV2K 1-800) and qualitative results very soon. 
-
 ### Requirements
 - Python 3
 - [PyTorch](https://github.com/pytorch/pytorch) (0.4.0), [torchvision](https://github.com/pytorch/vision)
