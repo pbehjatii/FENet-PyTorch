@@ -51,7 +51,7 @@ $ python div2h5.py
 
 
 ### Testing
-We provide the pretrained models in `checkpoint` directory. To test FENet on benchmark datasets:
+We provide the pretrained models in `checkpoint` directory. All visual results of FENet for scale factor x2, x3, and x4 can be downloaded [here.](https://drive.google.com/drive/folders/19u-5j5uKv1QfB7Urmy8LHI6UYf9gaouV?usp=sharing)). To test FENet on benchmark datasets:
 ```shell
 # Scale factor x2
 $ python sample.py      --test_data_dir dataset/<dataset> --scale 2 --ckpt_path ./checkpoint/<path>.pth --sample_dir <sample_dir>
