@@ -16,7 +16,8 @@ def mean__std(data_loader):
     cnt = 0
     mean = torch.empty(3)
     std = torch.empty(3)
-
+    # import pdb;
+    # pdb.set_trace()
 
     for data, label in data_loader:
         b, c, h, w = data.size()

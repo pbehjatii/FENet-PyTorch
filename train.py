@@ -11,8 +11,8 @@ def parse_args():
     parser.add_argument("--ckpt_name", type=str)
 
     parser.add_argument("--print_interval", type=int, default=1000)
-    parser.add_argument("--train_data_path", type=str, default="datasets/DIV2K_train_NEW.h5")
-    parser.add_argument("--valid_data_path", type=str, default="datasets/DIV2K/Set5")
+    parser.add_argument("--train_data_path", type=str, default="/home/pbehjati/2_github/DIV2K_train_UPDATED.h5")
+    parser.add_argument("--valid_data_path", type=str, default="/home/pbehjati/All_codes/datasetS/DIV2K/Set5")
     parser.add_argument("--ckpt_dir", type=str, default="checkpoint")
     parser.add_argument("--sample_dir", type=str, default="sample")
 

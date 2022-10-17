@@ -94,11 +94,11 @@ class BasicConv2d(nn.Module):
                               kernel_size=kernel_size, stride=stride,
                               padding=padding, bias=True))
 
-        self.LR = nn.ReLU(inplace=True)
+        self.act = nn.ReLU(inplace=True)
 
     def forward(self, x):
         x = self.conv(x)
-        x = self.LR(x)
+        x = self.act(x)
         return x
 
 
@@ -109,17 +109,17 @@ class FE(nn.Module):
         super(FE, self).__init__()
         self.pool = nn.AvgPool2d(kernel_size=4, stride=4)
 
-        self.F2 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
-        self.F3 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
-        self.F4 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
+        self.k2 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
+        self.k3 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
+        self.k4 = wn(nn.Conv2d(in_channels, channels, kernel_size=3, stride=1,padding=1, bias=False))
 
     def forward(self, x):
 
         h1 = F.interpolate(self.pool(x), (x.size(-2), x.size(-1)), mode='nearest')
         h2 = x - h1
-        F2 = torch.sigmoid(torch.add(self.F2(h2),x))
-        out = torch.mul(self.F3(x), F2)
-        out = self.F4(out)
+        F2 = torch.sigmoid(torch.add(self.k2(h2), x))
+        out = torch.mul(self.k3(x), F2)
+        out = self.k4(out)
 
         return out
 
@@ -132,8 +132,8 @@ class FEB(nn.Module):
         self.path_1 = wn(nn.Conv2d(in_channels, channels, kernel_size=1, bias=False))
         self.path_2 = wn(nn.Conv2d(in_channels, channels, kernel_size=1, bias=False))
         self.relu = nn.ReLU(inplace=True)
-        self.F1 = wn(nn.Conv2d(channels, channels, kernel_size=3, stride=1, padding=1, bias=False))
-        self.FE = FE(wn, 32, 32)
+        self.k1 = wn(nn.Conv2d(channels, channels, kernel_size=3, stride=1, padding=1, bias=False))
+        self.HConv = FE(wn, 32, 32)
         self.conv = wn(nn.Conv2d(channels*2, in_channels, kernel_size=1, bias=False))
 
 
@@ -141,13 +141,13 @@ class FEB(nn.Module):
         #Low-Frequency Path
         path_1 = self.path_1(x)
         path_1 = self.relu(path_1)
-        path_1 = self.F1(path_1)
+        path_1 = self.k1(path_1)
         path_1  = self.relu(path_1)
 
         #High-Frequency Path
         path_2 = self.path_2(x)
         path_2 = self.relu(path_2)
-        path_2 = self.FE(path_2)
+        path_2 = self.HConv(path_2)
         path_2 = self.relu(path_2)
 
         output = self.conv(torch.cat([path_1, path_2], dim=1))

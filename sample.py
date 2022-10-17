@@ -11,11 +11,11 @@ import torch.nn as nn
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default='FENet')
-    parser.add_argument("--ckpt_path", type=str)
+    parser.add_argument("--ckpt_path", type=str, default='./logs/L1_64_6K_0.001_4updated/checkpoints/None_583000.pth.tar')
     parser.add_argument("--group", type=int, default=4)
     parser.add_argument("--sample_dir", type=str, default='sample')
-    parser.add_argument("--test_data_dir", type=str, default="datasetS/DIV2K/Set5")
-    parser.add_argument("--scale", type=int, default=2)
+    parser.add_argument("--test_data_dir", type=str, default="/home/pbehjati/All_codes/datasetS/DIV2K/Set5")
+    parser.add_argument("--scale", type=int, default=4)
     parser.add_argument("--shave", type=int, default=20)
     parser.add_argument("--num_gpu", type=int, default=4)
 
@@ -110,7 +110,7 @@ def sample(net, dataset, cfg):
 
 def main(cfg):
     module = importlib.import_module("{}".format(cfg.model))
-    net = module.Net(multi_scale=False, group=cfg.group, scale=cfg.scale)
+    net = module.FENet(multi_scale=False, group=cfg.group, scale=cfg.scale)
     print(json.dumps(vars(cfg), indent=4, sort_keys=True))
 
     checkpoint = torch.load(cfg.ckpt_path)
