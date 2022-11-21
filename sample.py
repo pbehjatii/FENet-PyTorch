@@ -11,7 +11,7 @@ import torch.nn as nn
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default='FENet')
-    parser.add_argument("--ckpt_path", type=str, default='./logs/L1_64_6K_0.001_4updated/checkpoints/None_583000.pth.tar')
+    parser.add_argument("--ckpt_path", type=str, default='./logs/checkpoint_x4/None_583000.pth.tar')
     parser.add_argument("--group", type=int, default=4)
     parser.add_argument("--sample_dir", type=str, default='sample')
     parser.add_argument("--test_data_dir", type=str, default="./dataset/DIV2K/Set5")
