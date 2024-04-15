@@ -102,7 +102,7 @@ We achieved state-of-the-art performance on lightweigh image SR, denoising and d
   publisher={IEEE}
 }
 ```
-This implementation is for non-commercial research use only. If you find this code useful in your research, please cite the above paper. Please also see our other works:
+Please also see our other works:
 
 - Single image super-resolution based on directional variance attention network - Pattern Recognition, 2022. [[Paper](https://www.sciencedirect.com/science/article/pii/S0031320322004770?dgcid=author)] [[Code](https://github.com/pbehjatii/DiVANet)] 
 
